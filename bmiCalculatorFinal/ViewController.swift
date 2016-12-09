@@ -18,12 +18,11 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-       
     }
     @IBAction func calculateButton(_ sender: Any)
     {
         var weight = Double (weightTextBox.text!)
-        
+
         var feet = Double(feetTextBox.text!)
         
         var inches = Double(inchesTextBox.text!)
@@ -38,6 +37,8 @@ class ViewController: UIViewController
         
          bmi = kilograms / (finalHeight * finalHeight)
         print(bmi)
+        
+       
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
