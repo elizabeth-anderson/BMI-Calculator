@@ -17,17 +17,18 @@ class ImageViewController: ViewController
     var bmiTwo = Double()
     override func viewDidLoad()
     {
-    var bmiString = String(format: "%.1f", bmiTwo)
+    var bmiString = String(format: "%.1f", bmiTwo) // rounds BMI value to tenths place
 
-    bmiLabel.text = "Your BMI is \(bmiString)."
-    if bmiTwo < 18.5
+    bmiLabel.text = "Your BMI is \(bmiString)." // shows BMI value in the label
+        
+    if bmiTwo < 18.5 // changes background and text based on BMI value
     {
     healthLabel.text = "Yikes! You're underweight!😳"
      view.backgroundColor = UIColor.red
     }
     else if bmiTwo >= 18.5 && bmiTwo <= 24.9
     {
-    healthLabel.text = "Congrats,weight is normal!😁"
+    healthLabel.text = "Congrats, your weight is normal!😁"
     view.backgroundColor = UIColor.green
     }
     else if bmiTwo >= 25.0

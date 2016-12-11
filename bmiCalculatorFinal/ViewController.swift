@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController
 {
-    @IBOutlet weak var inchesTextBox: UITextField!
+    @IBOutlet weak var inchesTextBox: UITextField! // connected text boxes
     @IBOutlet weak var feetTextBox: UITextField!
     @IBOutlet weak var weightTextBox: UITextField!
     var bmi = 0.0
@@ -18,8 +18,9 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "blueFade")!) //changes view controller background to an image
     }
-    @IBAction func calculateButton(_ sender: Any)
+    @IBAction func calculateButton(_ sender: Any) // calculates bmi
     {
         var weight = Double (weightTextBox.text!)
 
@@ -39,9 +40,10 @@ class ViewController: UIViewController
         print(bmi)
         
        
+       
         
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) // sends values to next VC
     {
         let nextVC = segue.destination as! ImageViewController
         nextVC.bmiTwo = bmi
