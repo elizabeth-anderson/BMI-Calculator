@@ -23,19 +23,19 @@ class ImageViewController: ViewController
         
     if bmiTwo < 18.5 // changes background and text based on BMI value
     {
-    healthLabel.text = "Yikes! You're underweight!😳"
+    healthLabel.text = "Yikes! You're underweight!😳 Eat a burger!!"
      view.backgroundColor = UIColor.red
     }
         
     else if bmiTwo >= 18.5 && bmiTwo <= 24.9
     {
-    healthLabel.text = "Congrats, your weight is normal!😁"
+    healthLabel.text = "You're healthy! Lucky you!"
     view.backgroundColor = UIColor.green
     }
         
     else if bmiTwo >= 25.0
     {
-    healthLabel.text = "Uh oh, you are overweight.😬"
+    healthLabel.text = "Uh-oh, you're overweight...hit the gym!"
     view.backgroundColor = UIColor.red
     }
 }
