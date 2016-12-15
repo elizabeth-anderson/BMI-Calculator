@@ -17,7 +17,7 @@ class ImageViewController: ViewController
     var bmiTwo = Double()
     override func viewDidLoad()
     {
-    var bmiString = String(format: "%.1f", bmiTwo) // rounds BMI value to tenths place
+    let bmiString = String(format: "%.1f", bmiTwo) // rounds BMI value to tenths place
 
     bmiLabel.text = "Your BMI is \(bmiString)." // shows BMI value in the label
         

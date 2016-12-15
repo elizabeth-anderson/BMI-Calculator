@@ -20,29 +20,29 @@ class ViewController: UIViewController
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "blueFade")!) //changes view controller background to an image
     }
+    
+    
     @IBAction func calculateButton(_ sender: Any) // calculates bmi
     {
-        var weight = Double (weightTextBox.text!)
+        let weight = Double (weightTextBox.text!)
 
-        var feet = Double(feetTextBox.text!)
+        let feet = Double(feetTextBox.text!)
         
-        var inches = Double(inchesTextBox.text!)
+        let inches = Double(inchesTextBox.text!)
         
-        var kilograms = weight! * 0.45
+        let kilograms = weight! * 0.45
         
-        var feetToInches = feet! * 12
+        let feetToInches = feet! * 12
         
-        var totalInches = feetToInches + inches!
+        let totalInches = feetToInches + inches!
         
-        var finalHeight = totalInches * 0.025
+        let finalHeight = totalInches * 0.025
         
          bmi = kilograms / (finalHeight * finalHeight)
         print(bmi)
-        
-       
-       
-        
     }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) // sends values to next VC
     {
         let nextVC = segue.destination as! ImageViewController
