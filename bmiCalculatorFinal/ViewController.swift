@@ -10,10 +10,11 @@ import UIKit
 
 class ViewController: UIViewController
 {
-    @IBOutlet weak var inchesTextBox: UITextField! // connected text boxes
+     // connected text boxes on UIView
+    @IBOutlet weak var inchesTextBox: UITextField!
     @IBOutlet weak var feetTextBox: UITextField!
     @IBOutlet weak var weightTextBox: UITextField!
-    var bmi = 0.0
+    var bmi = 0.0 // sets BMI initial value to zero
 
     override func viewDidLoad()
     {
@@ -22,31 +23,32 @@ class ViewController: UIViewController
     }
     
     
-    @IBAction func calculateButton(_ sender: Any) // calculates bmi
+    @IBAction func calculateButton(_ sender: Any) // holds all BMI math/conversions
     {
-        let weight = Double (weightTextBox.text!)
+        let weight = Double (weightTextBox.text!) //sets text boxes as doubles
 
         let feet = Double(feetTextBox.text!)
         
         let inches = Double(inchesTextBox.text!)
         
-        let kilograms = weight! * 0.45
+        let kilograms = weight! * 0.45 // converting lbs to kg
         
-        let feetToInches = feet! * 12
+        let feetToInches = feet! * 12 // inches to feet
         
-        let totalInches = feetToInches + inches!
+        let totalInches = feetToInches + inches! // adds up total inches
         
-        let finalHeight = totalInches * 0.025
+        let finalHeight = totalInches * 0.025 // inches to metres
         
-         bmi = kilograms / (finalHeight * finalHeight)
+         bmi = kilograms / (finalHeight * finalHeight) // calculates  BMI
         print(bmi)
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) // sends values to next VC
     {
-        let nextVC = segue.destination as! ImageViewController
-        nextVC.bmiTwo = bmi
+        let nextVC = segue.destination as! ImageViewController // sets destination
+        
+        nextVC.bmiTwo = bmi // carried values
         
     }
 
